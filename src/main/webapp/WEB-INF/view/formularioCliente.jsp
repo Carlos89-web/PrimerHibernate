@@ -13,8 +13,6 @@
 </head>
 <body>
 
-<!-- Video 67, 69, 70, 71 73, 74, 75 -->
-
 <form:form action="insertarCliente" modelAttribute ="cliente" method= "POST">
 
 	<form:hidden path ="id"/>
@@ -35,9 +33,7 @@
 	
 		<td colspan="2"><input type="submit" value="Insertar"></td>
 	
-	
 	</tr>
-	
 	
 	</table>
 
