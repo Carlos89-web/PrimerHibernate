@@ -1,7 +1,5 @@
 package CRUD.DAO;
 
-//--- VIDEO 69, 71, 73, 74, 75 ---
-
 import java.util.List;
 
 import org.hibernate.Session;
@@ -19,13 +17,13 @@ import CRUD.Controlador.entity.Cliente;
 public class ClienteDAOclase implements ClienteDAO {
 	
 	// Aqui realizamos todo el trabajo, primero creamos el SessionFactory, al que llamamos igual que
-	// como viene especificado en el archivo xml de configuraci髇. Hacemos la inyecci髇 de dependencias
+	// como viene especificado en el archivo xml de configuraci贸n. Hacemos la inyecci贸n de dependencias
 	// con la annotation Autowired
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	// Hay una annotation de spring "m醙ica" que nos permite simplificar c骴igo, ya que nos evita
+	// Hay una annotation de spring "m谩gica" que nos permite simplificar c贸digo, ya que nos evita
 	// crear el commit, rollback, etc... que es @Transactional
 
 	@Transactional
@@ -33,7 +31,7 @@ public class ClienteDAOclase implements ClienteDAO {
 	public List<Cliente> getClientes() {
 		// TODO Auto-generated method stub
 		
-		// Obtenemos la sesi髇
+		// Obtenemos la sesi贸n
 		
 		Session miSession = sessionFactory.getCurrentSession();
 		
@@ -49,14 +47,14 @@ public class ClienteDAOclase implements ClienteDAO {
 		return clientes;
 	}
 	
-	// Video 71: Creamos m閠odo para insertar clientes en la tabla de la BD
+	// Creamos m茅todo para insertar clientes en la tabla de la BD
 
 	@Override
 	@Transactional
 	public void insertarCliente(Cliente elCliente) {
 		// TODO Auto-generated method stub
 		
-		// Obtenemos la sesi髇
+		// Obtenemos la sesi贸n
 		
 		Session miSession = sessionFactory.getCurrentSession();
 		
@@ -64,38 +62,38 @@ public class ClienteDAOclase implements ClienteDAO {
 		
 		//miSession.save(elCliente);
 		
-		// Video 74: Usamos otro m閠odo
+		// Usamos otro m茅todo
 		
 		miSession.saveOrUpdate(elCliente);
 		
 	}
 	
-	// Video 73: M閠odo para proporcionar el cliente seg鷑 el id que se le pida
+	// M茅todo para proporcionar el cliente seg煤n el id que se le pida
 
 	@Override
 	@Transactional
 	public Cliente getCliente(int id) {
 		// TODO Auto-generated method stub
 		
-		// Obtener la sesi髇
+		// Obtener la sesi贸n
 		
 		Session miSession = sessionFactory.getCurrentSession(); 
 		
-		// Obtener la informaci髇 del cliente seleccionado
+		// Obtener la informaci贸n del cliente seleccionado
 		
 		Cliente elCliente = miSession.get(Cliente.class, id);
 		
 		return elCliente;
 	}
 
-	// Video 75: M閠odo para eliminar el cliente
+	// M茅todo para eliminar el cliente
 	
 	@Transactional
 	@Override
 	public void eliminarCliente(int id) {
 		// TODO Auto-generated method stub
 		
-		// Obtener la sesi髇
+		// Obtener la sesi贸n
 		
 		Session miSession = sessionFactory.getCurrentSession(); 
 				
@@ -103,7 +101,7 @@ public class ClienteDAOclase implements ClienteDAO {
 		
 		Query consulta = miSession.createQuery("delete from Cliente where id=:IdDelCliente");
 		
-		// Establecemos el par醡etro a borrar
+		// Establecemos el par谩metro a borrar
 		
 		consulta.setParameter("IdDelCliente", id);
 		
