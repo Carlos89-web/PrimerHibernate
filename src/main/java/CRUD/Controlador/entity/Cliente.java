@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// --- Video 68 ---
-
 // Indicamos a la clase que va a ser una entidad con @Entity y la tabla que va a mapear con @Table
 
 @Entity
