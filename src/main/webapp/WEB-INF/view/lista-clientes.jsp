@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<!-- Video 67, 69, 70, 73, 74, 75 -->
-
 <h1>Lista de clientes</h1>
 
 <table  border="1">
@@ -30,7 +28,7 @@
 	</tr>
 	
 	<!-- Creamos un bucle for each para recorrer la tabla clientes
-	porque no sabemos cuantos clientes habrán -->
+	porque no sabemos cuantos clientes habrÃ¡n -->
 	
 	<c:forEach var="clienteTemp" items="${clientes }">
 	
@@ -53,7 +51,7 @@
 		<td>${clienteTemp.email }</td>
 	
 		<td><a href="${linkActualizar }"><input type="button" value="Modificar"/></a></td>
-		<td><a href="${linkEliminar }"><input type="button" value="Eliminar" onclick="if(!(confirm('¿Vas a eliminar un registro, ¿Estás seguro?'))) return false"/></a></td>
+		<td><a href="${linkEliminar }"><input type="button" value="Eliminar" onclick="if(!(confirm('Â¿Vas a eliminar un registro, Â¿EstÃ¡s seguro?'))) return false"/></a></td>
 	
 	</tr>
 	
