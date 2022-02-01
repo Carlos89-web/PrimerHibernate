@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import CRUD.Controlador.entity.Cliente;
 import CRUD.DAO.ClienteDAO;
 
-// --- Video 67, 71, 73, 75 ---
-
-// Le decimos que ser· la clase controlador con la annotation @Controller.
-// Registramos las url, que es la tabla "cliente" de la BD, a travÈs de @RequestMapping
+// Le decimos que ser√° la clase controlador con la annotation @Controller.
+// Registramos las url, que es la tabla "cliente" de la BD, a trav√©s de @RequestMapping
 
 @Controller
 @RequestMapping("/cliente")
@@ -28,14 +26,14 @@ public class Controlador {
 	@Autowired
 	private ClienteDAO clienteDAO;
 	
-	// Creamos un mÈtodo que nos va a devovler el JSP, que recibe por par·metro el Model
+	// Creamos un m√©todo que nos va a devovler el JSP, que recibe por par√°metro el Model
 	// al que llamamos modelo, retornamos el nombre de nuestro JSP
 
 	@RequestMapping("/lista")
 	public String listaClients (Model modelo) {
 		
-		// Creamos una inyecciÛn desde la clase ClienteDAO hasta el controlador.
-		// Este mÈtodo debe obtener los clientes desde el DAO
+		// Creamos una inyecci√≥n desde la clase ClienteDAO hasta el controlador.
+		// Este m√©todo debe obtener los clientes desde el DAO
 		
 		List<Cliente> losClientes = clienteDAO.getClientes();
 		
@@ -56,7 +54,7 @@ public class Controlador {
 		
 		Cliente elCliente = new Cliente();
 		
-		// Pasamos como par·metro el nombre del atributo y lo agregamos
+		// Pasamos como par√°metro el nombre del atributo y lo agregamos
 		
 		modelo.addAttribute("cliente", elCliente);
 		
@@ -64,9 +62,9 @@ public class Controlador {
 		
 	}
 	
-	// Creamos un mÈtodo que conecte el botÛn insertar con la base de datos y agregue al cliente 
-	// a la tabla. Por par·metro, debemos pasarle el modelattribute, al que dimos nombre en el 
-	// formulario "formularioCliente", y a continuaciÛn, un objeto de tipo Cliente. Y por ˙ltimo,
+	// Creamos un m√©todo que conecte el bot√≥n insertar con la base de datos y agregue al cliente 
+	// a la tabla. Por par√°metro, debemos pasarle el modelattribute, al que dimos nombre en el 
+	// formulario "formularioCliente", y a continuaci√≥n, un objeto de tipo Cliente. Y por √∫ltimo,
 	// redireccionamos a clientes/lista
 	
 	@PostMapping("/insertarCliente")
@@ -80,7 +78,7 @@ public class Controlador {
 		
 	}
 	
-	// Video 73: Este mÈtodo har· 3 tareas
+	// Este m√©todo har√° 3 tareas
 	
 	@GetMapping("/muestraFormularioActualizar")
 	public String muestraFormularioActualizar(@RequestParam("clienteId") int Id, Model modelo) {
@@ -99,8 +97,8 @@ public class Controlador {
 		
 	}
 	
-	// Video 75: Creamos un mapeo hacia el link del botÛn eliminar. Model no lo necesitamos
-	// porque no necesitamos informaciÛn del objeto cliente, solo el id. 
+	// Creamos un mapeo hacia el link del bot√≥n eliminar. Model no lo necesitamos
+	// porque no necesitamos informaci√≥n del objeto cliente, solo el id. 
 	
 	@GetMapping("/eliminar")
 	public String eliminarCliente(@RequestParam("clienteId") int Id) {
